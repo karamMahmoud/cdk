@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; */
+
+.DeleteDialog .mat-dialog-container{
+    padding:0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@media (max-width:600px){
+    .DeleteDialog{
+        width:80% !important;
+    }
+}
+
+.DeleteDialog .mat-dialog-container{
+    padding:0;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.mr-20{
+    margin: 20px;
+}
+
+.btn-container .save__btn{
+   background: #4cae4c;
+   color: #fff;
+   font-weight: bold;
+}
+
+.btn-container .add__btn{
+   background: #6567ac;
+   color: #fff;
+   font-weight: bold;
+}
+
+.btn-container .cancel__btn{
+   background: #dddddd;
+   color: #333;
+   font-weight: bold;
+}
+
+.mr-r15{
+   margin-right: 15px; 
+}
+
+.add-icon{
+    color: #6567ac;
+}
+
+.delete-icon{
+    color: #d43f3a
+}
+
+.delete__btn{
+    color: #fff;
+    background: #d43f3a;
+}

@@ -1,0 +1,24 @@
+<div class="dialog-title">Type of adding</div>
+<div class="dialog-body">
+    <!-- <mat-radio-group  [(ngModel)]="animal" class="example-radio-button">
+            <mat-radio-button   [value]="add" class="example-radio-button">
+                            Add new student account to institution
+            </mat-radio-button>
+            <mat-radio-button   [value]="sub" class="example-radio-button">
+                            Subscribe student account with institution
+            </mat-radio-button>
+            
+        </mat-radio-group> -->
+        <mat-radio-group [(ngModel)]="animal">
+                <mat-radio-button class="example-margin block" value="add">
+                        Add new student account to institution
+                </mat-radio-button>
+                <mat-radio-button class="example-margin mr-t10 block" value="sub">
+                        Subscribe student account with institution
+                </mat-radio-button>
+            </mat-radio-group>
+</div>
+<div class="btn-container mr-20">
+    <button  mat-raised-button mat-dialog-close class="cancel-btn mr-r15 mat-headline center-align">Cancel</button>
+    <button  mat-raised-button [mat-dialog-close]="animal" class="add__btn mat-headline center-align">Move</button>
+</div>
