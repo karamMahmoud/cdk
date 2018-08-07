@@ -1,0 +1,61 @@
+<div fxLayout="column" class="components-container-gt-xs" [ngClass.xs]="'components-container-xs'" fxLayoutGap="20px">
+
+    <div fxFlex class="form-component-holder mat-elevation-z4">
+        <mat-toolbar class="form-header">
+            <h1 class="mat-headline center-align">School Data</h1>
+        </mat-toolbar>
+        <div [hidden]="submitted" fxLayout="column" class="widgetHolder-content" fxLayoutAlign="space-around stretch" style="background-color: white;">
+
+
+            <form [formGroup]="profileForm" class="form-container" (ngSubmit)="onSubmit()" fxLayout="column" fxFlex="100">
+                <mat-form-field class="width">
+                    <input type="text" matInput placeholder="School name" formControlName="schoolname" required>
+
+                </mat-form-field>
+                <mat-error *ngIf="schoolname.invalid&& (schoolname.dirty || schoolname.touched)" align="end" style="color: red;" class="mat-body-1 center-align ">
+
+                    Name must be at least 6 characters long.
+
+                </mat-error>
+
+                <mat-form-field class="width">
+                    <input type="text" matInput placeholder="Address" formControlName="address" required>
+
+                </mat-form-field>
+                <mat-error *ngIf="address.invalid&& (address.dirty || address.touched)" align="end" style="color: red;" class="mat-body-1 center-align ">
+
+                    Name must be at least 6 characters long.
+
+                </mat-error>
+
+                <mat-form-field class="width">
+                    <input type="text" matInput placeholder="Site" formControlName="site" required>
+
+                </mat-form-field>
+                <mat-error *ngIf="site.invalid&& (site.dirty || site.touched)" align="end" style="color: red;" class="mat-body-1 center-align ">
+
+                    Name must be at least 6 characters long.
+
+                </mat-error>
+
+                <div class="upload-btn-wrapper">
+                    <input type="text" class="input-file" value="Logo"/>
+                    <button mat-raised-button class="browse__btn btn mat-headline center-align">Browse</button>
+                    <input type="file" name="myfile" />
+                </div>
+                <mat-form-field class="width">
+                    <textarea matInput placeholder="School Code" formControlName="code" required></textarea>
+                </mat-form-field>
+                <mat-error *ngIf="code.invalid&& (code.dirty || code.touched)" align="end" style="color: red;" class="mat-body-1 center-align ">
+
+                    Name must be at least 6 characters long.
+
+                </mat-error>
+            </form>
+            <div class="btn-container mr-20">
+                <button mat-raised-button [routerLink]="['/../auth/dashboard']" class="mr-r15 cancel__btn mat-headline center-align">Cancel</button>
+                <button mat-raised-button class="save__btn mat-headline center-align">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -17,7 +17,7 @@ export const menus = [
     },
     {
         'name': 'School Data',
-        'icon': 'school',
+        'icon': 'info',
         'link': '/auth/school-data',
         'open': false,
     },
@@ -29,46 +29,46 @@ export const menus = [
     },
     {
         'name': 'Teachers',
-        'icon': 'school',
+        'icon': 'group',
         'link': '/auth/teachers',
         'open': false,
     },
     {
         'name': 'Classes',
-        'icon': 'school',
+        'icon': 'select_all',
         'link': '/auth/classes',
         'open': false,
     },
     {
         'name': 'Teacher Subjects',
-        'icon': 'school',
+        'icon': 'receipt',
         'link': '/auth/Teacher-subjects',
         'open': false,
     },
     {
         'name': 'Reports',
-        'icon': 'dashboard',
+        'icon': 'show_chart',
         'link': false,
         'open': false,
         'sub': [
             {
                 'name': 'Report 1',
                 'link': '',
-                'icon': 'dashboard',
+                'icon': 'show_chart',
                 'chip': false,
                 'open': true,
             },
             {
                 'name': 'Report 2',
                 'link': '',
-                'icon': 'dashboard',
+                'icon': 'show_chart',
                 'chip': false,
                 'open': true,
             },
             {
                 'name': 'Report 3',
                 'link': '',
-                'icon': 'dashboard',
+                'icon': 'show_chart',
                 'chip': false,
                 'open': true,
             }

@@ -21,5 +21,6 @@ export const appRoutes: Routes = [{
         { path: 'classes', loadChildren: '../classes/classes.module#ClassesModule', canActivate:[CanActivateTeam] },
         { path: 'students', loadChildren: '../students/students.module#StudentsModule', canActivate:[CanActivateTeam] },
         { path: 'teachers', loadChildren: '../teachers/teachers.module#TeachersModule', canActivate:[CanActivateTeam] },
+        { path: 'school-data', loadChildren: '../school-data/school-data.module#SchoolDataModule', canActivate:[CanActivateTeam] },
     ]
 }];

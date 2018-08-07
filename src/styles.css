@@ -32,6 +32,12 @@
    font-weight: bold;
 }
 
+.browse__btn{
+    background: #dddddd;
+    color: #333;
+    font-weight: bold;
+ }
+
 .btn-container .add__btn{
    background: #6567ac;
    color: #fff;
