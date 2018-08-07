@@ -73,7 +73,7 @@ export class StudentsComponent implements OnInit {
         const dialogRef = this.dialog.open(ChooseTypeDialogComponent, {
           width: '50%',
           panelClass:'DeleteDialog',
-          data: {animal:"karam"}
+          data: {animal:"Student"}
         });
     
         dialogRef.afterClosed().subscribe(result => {
@@ -82,7 +82,7 @@ export class StudentsComponent implements OnInit {
               this.router.navigate(['/../auth/students/add']);
           }
           else{
-              //nothing
+              this.router.navigate(['/../auth/students/subscribe']);
           }
         });
       }

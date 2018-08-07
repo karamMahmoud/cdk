@@ -58,7 +58,7 @@ export class ClassesComponent implements OnInit {
         const dialogRef = this.dialog.open(DeleteDialogComponent, {
           width: '40%',
           panelClass:'DeleteDialog',
-          data: {animal:"karam"}
+          data: {animal:"Class"}
         });
     
         dialogRef.afterClosed().subscribe(result => {

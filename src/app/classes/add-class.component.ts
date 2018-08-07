@@ -16,14 +16,13 @@ export class AddClassesComponent implements OnInit {
       constructor(public form: FormBuilder) { 
               this.profileForm = this.form.group({
                  username:['',{validators: [Validators.minLength(6)], updateOn: 'blur'}],
-                email:['',Validators.required],
-                number:[ '',{validators: [Validators.minLength(10)], updateOn: 'blur'}],
-                pwd:['',Validators.required]
+                email:[''],
+                studentname:[ '',{validators: [Validators.minLength(6)], updateOn: 'blur'}],
              });
     
       }
-      get number() {
-      return this.profileForm.get('number');
+      get studentname() {
+      return this.profileForm.get('studentname');
     }
       get username() {
       return this.profileForm.get('username');
@@ -31,6 +30,12 @@ export class AddClassesComponent implements OnInit {
      get email() {
       return this.profileForm.get('email');
     }
+
+    foods = [
+      { value: 'steak-0', viewValue: 'Steak' },
+      { value: 'pizza-1', viewValue: 'Pizza' },
+      { value: 'tacos-2', viewValue: 'Tacos' }
+    ];
       // checkUserExists() {
         
            

@@ -73,17 +73,17 @@ export class TeachersComponent implements OnInit {
         const dialogRef = this.dialog.open(ChooseTypeDialogComponent, {
           width: '50%',
           panelClass:'DeleteDialog',
-          data: {animal:"karam"}
+          data: {animal:"Teacher"}
         });
     
         dialogRef.afterClosed().subscribe(result => {
           console.log(result);
-          if(result == 'add'){
-              this.router.navigate(['/../auth/teachers/add']);
-          }
-          else{
-              //nothing
-          }
+          // if(result == 'add'){
+          //     this.router.navigate(['/../auth/teachers/add']);
+          // }
+          // else{
+          //     //nothing
+          // }
         });
       }
 }

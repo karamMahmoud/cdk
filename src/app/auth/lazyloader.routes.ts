@@ -6,7 +6,7 @@ import { CanActivate } from '@angular/router';
 
 export const appRoutes: Routes = [{
     path: '', component: AuthComponent, children: [
-        { path: 'dashboard', component: DashboardCrmComponent },
+        { path: 'dashboard', component: DashboardCrmComponent, canActivate:[CanActivateTeam] },
         { path: 'material-widgets', loadChildren: '../material-widgets/material-widgets.module#MaterialWidgetsModule', canActivate:[CanActivateTeam] },
         { path: 'tables', loadChildren: '../tables/tables.module#TablesModule', canActivate:[CanActivateTeam] },
         { path: 'maps', loadChildren: '../maps/maps.module#MapsModule', canActivate:[CanActivateTeam] },

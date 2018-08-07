@@ -5,12 +5,12 @@ import { Validators,FormBuilder,FormGroup } from '@angular/forms';
 import { EmailValidator } from '@angular/forms';
 
 @Component({
-  selector: 'students',
-  templateUrl: './add-student.component.html',
+  selector: 'sub-student',
+  templateUrl: './subscribe-student.component.html',
   styleUrls: ['./students.component.scss']
 })
-export class AddStudentsComponent implements OnInit {
-     public profileForm:FormGroup;
+export class SubscribeStudentsComponent implements OnInit {
+    public profileForm:FormGroup;
     submitted = false;
     hide;
       constructor(public form: FormBuilder) { 
@@ -47,5 +47,6 @@ export class AddStudentsComponent implements OnInit {
          this.submitted = true; }
       ngOnInit() {
       }
+    
       
 }

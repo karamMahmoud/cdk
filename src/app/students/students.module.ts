@@ -34,6 +34,7 @@ import { HighlightJsModule, HIGHLIGHT_JS } from 'angular-highlight-js';
 import * as hljsTypescript from 'highlight.js/lib/languages/typescript';
 import { StudentsComponent } from './students.component';
 import { AddStudentsComponent } from './add-student.component';
+import { SubscribeStudentsComponent } from './subscribe-student.component';
 
 
 export function highlightJsFactory(): any {
@@ -43,7 +44,8 @@ export function highlightJsFactory(): any {
 
 const routes: Routes = [
     { path: '', component: StudentsComponent },
-    { path: 'add', component: AddStudentsComponent }
+    { path: 'add', component: AddStudentsComponent },
+    { path: 'subscribe', component: SubscribeStudentsComponent }
 ];
 
 
@@ -84,6 +86,7 @@ const routes: Routes = [
   declarations: [
     StudentsComponent,
     AddStudentsComponent,
+    SubscribeStudentsComponent
   ]
    ,
   entryComponents: [DeleteDialogComponent,ChooseTypeDialogComponent],
