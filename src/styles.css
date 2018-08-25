@@ -56,10 +56,12 @@
 
 .add-icon{
     color: #6567ac;
+    cursor: pointer;
 }
 
 .delete-icon{
-    color: #d43f3a
+    color: #d43f3a;
+    cursor: pointer;
 }
 
 .delete__btn{

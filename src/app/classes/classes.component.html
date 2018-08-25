@@ -19,7 +19,7 @@
                           </mat-form-field>
                           <div class="btn-container mr-b20 mr-t20">
                               <button  mat-raised-button  [routerLink]="['../add']" class="add__btn mr-r15 mat-headline center-align">Add class</button>
-                              <button  mat-raised-button class="save__btn mat-headline center-align">Export Import</button>
+                              <button  mat-raised-button class="save__btn mat-headline center-align">Export Excel</button>
                               </div>
             
             <table  matSort (matSortChange)="sortData($event)">
@@ -44,7 +44,7 @@
     
                                     </span>
                                     <span *ngIf="th.key=='action'">
-                                        <i class="material-icons add-icon" [routerLink]="['../add']">
+                                        <i class="material-icons add-icon" [routerLink]="['../edit',row.id]">
                                             create
                                             </i>
                                             <i class="material-icons delete-icon" (click)="onNoticeTriggered()">

@@ -3,6 +3,8 @@ import { ResponsiveTableHelpers } from './helpers.data';
 import { MatPaginator } from '@angular/material';
 import { MatDialog } from '@angular/material';
 import { DeleteDialogComponent } from '../core/dialoge/delete-dialoge.component';
+import { ClassesService } from './classes.service';
+
 
 @Component({
   selector: 'classes',
@@ -14,6 +16,7 @@ export class ClassesComponent implements OnInit {
   	displayedColumns = ['userId', 'userName', 'progress', 'color'];
 	rows: Array<any> = [];
     showResponsiveTableCode;
+    classes:object[];
 
 	@ViewChild(MatPaginator) paginator1: MatPaginator;
     pageLength = 0;
@@ -27,23 +30,29 @@ export class ClassesComponent implements OnInit {
     @Output() page = new EventEmitter();
     @Output() sort = new EventEmitter();
     @Output() dup = new EventEmitter();
-  	constructor(public dialog: MatDialog) {
+  	constructor(public dialog: MatDialog,private _classesSearch: ClassesService) {
    	}
 
     ngOnInit() {
+        this._classesSearch.getClasses().subscribe(
+            res => {
+                this.classes = res;
         this.getRows();
+        
+            })
+               
     }
   	next(event) {
         this.rows = [];
     	for (var i= 1 * event.pageIndex * event.pageSize; i< event.pageSize+event.pageIndex*event.pageSize ;i++) {
-            this.rows = [...this.rows,this.helpers.rows[i]];
+            this.rows = [...this.rows,this.classes[i]];
         }
     }
     getRows() {
-        for (var i=0;i<this.pageSize;i++) {
-            this.rows = [...this.rows,this.helpers.rows[i]];
+        for (var i=0;i<this.classes.length;i++) {
+            this.rows = [...this.rows,this.classes[i]];
         }
-        this.pageLength = this.helpers.rows.length;
+        this.pageLength = this.classes.length;
     }
     sortData(val){
     }

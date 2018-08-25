@@ -8,41 +8,74 @@
            
             
             <form [formGroup]="profileForm" class="form-container"  (ngSubmit)="onSubmit()" fxLayout="column" fxFlex="100" >
-                <mat-form-field class="width">
-                    <input type="text" matInput placeholder="Student name"  formControlName="studentname" required>
                 
+                <mat-form-field class="width-40">
+                    <input type="text" matInput placeholder="Class name"  formControlName="className" required>
                 </mat-form-field>
-                <mat-error *ngIf="studentname.invalid&& (studentname.dirty || studentname.touched)" align="end" style="color: red;" class="mat-body-1 center-align "> 
-                    
+                <mat-error *ngIf="className.invalid&& (className.dirty || className.touched)" align="end" style="color: red;" class="mat-body-1 center-align "> 
                         Name must be at least 6 characters long.
-                    
                 </mat-error>
-    
                 
-                <mat-form-field class="width-40" required>
-                    <mat-select placeholder="Grade">
-                      <mat-option *ngFor="let food of foods" [value]="food.value">
-                                        {{ food.viewValue }}
+                <mat-form-field class="width-40" >
+                    <mat-select placeholder="Grade" formControlName="grade" required>
+                      <mat-option *ngFor="let grade of grades" [(value)]="grade.value">
+                        {{ grade.viewValue }}
                       </mat-option>
                     </mat-select>
               </mat-form-field>
-              <mat-form-field  class="width">
-                <input type="email" matInput placeholder="Recovery email"  formControlName="email"
-                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"  required >
-            </mat-form-field>
-            <mat-error *ngIf="email.invalid && (email.dirty || email.touched)" align="end" style="color: red;" class="mat-body-1 center-align" >
-                
-                    Please enter valid email 
-            </mat-error>
-            <mat-form-field class="width">
+             
+            <!-- <mat-form-field class="width">
                 <input type="text" matInput placeholder="Username"  formControlName="username" required>
-            
             </mat-form-field>
             <mat-error *ngIf="username.invalid&& (username.dirty || username.touched)" align="end" style="color: red;" class="mat-body-1 center-align "> 
-                
                     Name must be at least 6 characters long.
-                
-            </mat-error>
+            </mat-error> -->
+
+            <div fxLayout="row" class="width" >
+                <mat-form-field class="width-40" >
+                    <mat-select placeholder="Student name" formControlName="studentname" required>
+                      <mat-option *ngFor="let student of students?.students" [(value)]="student.id">
+                                        {{ student.full_name }}
+                      </mat-option>
+                    </mat-select>
+              </mat-form-field>
+                <div class="btn-container mr-20">
+                    <button mat-raised-button class="save__btn mat-headline center-align">Add</button>
+                </div>
+            </div>
+
+           
+          <table  matSort (matSortChange)="sortData($event)" class="width-50">
+            <thead>
+                <tr>
+                    <th mat-sort-header="name" scope="col">Name</th>
+                    <th mat-sort-header="delete" scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of students?.students let i=index" >
+                    <td [attr.data-label]="name">
+                        <span >
+                            {{student.full_name}}
+                        </span>
+                        </td>
+                    <td [attr.data-label]="delete">
+                        <span >
+                                <i class="material-icons delete-icon" (click)="onNoticeTriggered()">
+                                    delete_sweep
+                                </i>
+                        </span>
+                    </td>
+                    </tr>
+                    <tr *ngIf="students?.length==0 && status==false">
+                        <td [colSpan]="2" style="text-align: center;">
+                        No records found
+                        </td>
+                    </tr>
+            </tbody>
+            <thead *matHeaderRowDef="displayedColumns"></thead>
+            <tr *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
     
             </form>
             <div class="btn-container mr-20">

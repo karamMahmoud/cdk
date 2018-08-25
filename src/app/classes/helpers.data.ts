@@ -1,8 +1,13 @@
 export const ResponsiveTableHelpers = {
     header : [
+        {
+            name:'ID',
+            key:'id',
+            order:'asc'
+        },
           {
-              name:'ID',
-              key:'id',
+              name:'Grade',
+              key:'grade',
               order:'asc'
           },
           {
@@ -11,20 +16,10 @@ export const ResponsiveTableHelpers = {
               order:'asc'
           },
           {
-              name:'Progress',
-              key:'progress',
-              order:'asc'
-          },
-          {
-              name:'Color',
-              key:'color',
-              order:'asc'
-          },
-          {
-              name:'Actions',
-              key:'action',
-              order:'asc'
-          }
+            name:'Actions',
+            key:'action',
+            order:'asc'
+        }
       ],
       rows : [{
           id: "1",

@@ -81,7 +81,7 @@ export class StudentsComponent implements OnInit {
           if(result == 'add'){
               this.router.navigate(['/../auth/students/add']);
           }
-          else{
+          if(result == 'sub'){
               this.router.navigate(['/../auth/students/subscribe']);
           }
         });

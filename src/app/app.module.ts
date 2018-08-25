@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { LazyLoadModule } from './lazy-load/lazy-load.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
+import { HttpModule, Http } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -16,6 +18,7 @@ import { CoreModule } from './core/core.module';
   imports: [
     BrowserModule,
     LazyLoadModule,
+    HttpModule,
     CoreModule,
     BrowserAnimationsModule
   ],

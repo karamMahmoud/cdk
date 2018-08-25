@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule , FormsModule} from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DialogModule } from '../core/dialoge/dialog.module';
 import { DeleteDialogComponent } from '../core/dialoge/delete-dialoge.component';
 import { Routes, RouterModule } from '@angular/router';
+import { HandleErrors } from '../utils/handle-errors';
+import { ClassesService } from './classes.service';
+
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -42,7 +45,8 @@ export function highlightJsFactory(): any {
 
 const routes: Routes = [
     { path: '', component: ClassesComponent },
-    { path: 'add', component: AddClassesComponent }
+    { path: 'add', component: AddClassesComponent },
+    { path: 'edit/:id', component: AddClassesComponent },
 ];
 
 
@@ -60,8 +64,8 @@ const routes: Routes = [
     MatToolbarModule,
     MatListModule,
     MatStepperModule,
-    ReactiveFormsModule,
     FormsModule,
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatExpansionModule,
@@ -87,7 +91,8 @@ const routes: Routes = [
    ,
   entryComponents: [DeleteDialogComponent],
   exports: [
-    ]
+    ],
+    providers:[ClassesService,HandleErrors]
       
 })
 export class ClassesModule { }
